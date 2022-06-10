@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <script src='func.js'></script>
+    <!--<meta http-equiv="refresh", content="1">-->
+    <link rel='stylesheet' href="style.css">
+</head>
+<body style="text-align: center;  background-color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <div class="center">
+    <h1 id="demo" style="text-align: center; color:white;">
+        <script>
+            var num = 10;
+            var count = 0;
+            let countdown = 3;
+            var t;
+            t = setInterval(function(){
+            num--;
+            console.log(num);
+            if(num === 0){
+                count++;
+                if(count === 2){
+                    document.getElementById("demo").innerHTML = "Time is over";
+                    clearInterval(t);
+                } // stop the interval 2 times of 10 seconds
+                else{
+                    document.getElementById("demo").innerHTML = "Time is over";
+                    setTimeout(function(){
+                        num = 10;
+                    }, 4000);
+                }
+            }
+            else document.getElementById("demo").innerHTML = num;
+            if(num < 0)document.getElementById("demo").innerHTML = countdown != 0 ? countdown-- : "Start";
+            }, 1000);
+        </script>
+    </h1></div>
+</body>
+</html>
